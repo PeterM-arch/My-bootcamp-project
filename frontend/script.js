@@ -1,4 +1,6 @@
-const API_URL = "https://onrender.com";
+const API_URL = "https://my-bootcamp-project-backend.onrender.com/api/brews";
+
+
 
 
 // === FUNCTION 1: FETCH AND DISPLAY PAST BREWS ===
