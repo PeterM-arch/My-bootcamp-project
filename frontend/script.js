@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:5000/api/brews';
+const API_URL = "https://onrender.com";
+
 
 // === FUNCTION 1: FETCH AND DISPLAY PAST BREWS ===
 async function fetchBrews() {
