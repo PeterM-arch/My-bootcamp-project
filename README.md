@@ -1,60 +1,61 @@
-# **XPL Full-stack developer bootcamp assessment**
+# Coffee Brew Log Application
 
-# **Introduction**
+A full-stack web application designed to log, track, and monitor daily coffee brewing iterations. Built as part of the XPL Full-stack developer project assessment constraints.
 
-You’re opening a hipster ☕️micro-roastery and need a tiny app to log each brew you make.
+## 🚀 Core Features & Mission Requirements
+- **Persistent Storage:** Full CRUD operations backed by an SQLite SQL database using the Sequelize ORM framework.
+- **Dynamic Interface:** Auto-calculating browser context page tab title displaying total logs (`Brews: {count}`) updated live.
+- **Robust Client Validation:** Restricts and completely blocks empty form payloads from hitting backend execution blocks.
+- **Modern Security Hygiene:** Enabled Cross-Origin Resource Sharing (CORS) middleware to prevent unauthorized port-level handshakes.
 
-# **Your mission**
+## 🛠️ Tech Stack Architecture
+- **Frontend:** Vanilla ECMAScript JavaScript, HTML5 semantic structure, and responsive grid layouts.
+- **Backend:** Node.js, Express.js REST API framework context execution.
+- **Database layer:** Sequelize ORM mapping SQLite database engines.
 
-Ship a working full-stack **Coffee Brew Log app** that lets a user:
+## 🔌 API Documentation & Endpoints
 
-* Create a brew entry and save it to the database  
-* Read the brew log in a list view  
-* Filter the list view by brew method  
-* Edit and update a brew entry  
-* Delete a brew entry
+### 1. Fetch All Brew Logs
+- **Endpoint:** `GET /api/brews`
+- **Response Status:** `200 OK`
+- **Payload Return:** Array of all logged coffee records.
 
-# **Tech stack**
+### 2. Log a New Coffee Brew Entry
+- **Endpoint:** `POST /api/brews`
+- **Headers:** `Content-Type: application/json`
+- **Response Status:** `201 Created` / `400 Bad Request`
+- **Required Body Payload JSON Structure:**
+```json
+{
+  "title": "Ethiopian Yirgacheffe",
+  "method": "V60 Pourover",
+  "coffeeGrams": 18,
+  "waterGrams": 250,
+  "rating": 5,
+  "tastingNotes": "Fruity and bright"
+}
+```
 
-You may choose which technology you use, but you must include:
+## 💻 Local Setup & Installation Instructions
 
-* A front-end framework like React, Vue, Svelte or Angular  
-* Any CSS framework  
-* A back-end framework like Node/Express, Rails, Flask, Go, Laravel etc.  
-* An ORM backed by a SQL database like MySQL, PostgreSQL or SQLite  
-* In your git repo, place your backend and frontend in their respective folders
+### Prerequisites
+Ensure you have [Node.js](https://nodejs.org) runtime environments downloaded onto your machine.
 
-# **Technical requirements**
+### Backend Setup
+1. Open a terminal instance and navigate to the backend folder context:
+   ```bash
+   cd backend
+   ```
+2. Install all required Sequelize, Express, and Database driver modules:
+   ```bash
+   npm install
+   ```
+3. Initialize the server runtime environment:
+   ```bash
+   node index.js
+   ```
 
-### Front-end
+### Frontend Setup
+1. Open the `frontend` folder workspace using a local server engine like the **VS Code Live Server Extension**.
+2. Launch `index.html` via port `5500` to interact with the full-stack database wrapper safely.
 
-* Split your app into sensible components.  
-* Build the UI according to the wireframe images supplied below, but feel free to make your own design decisions if you think of something better.  
-* Make sure that your UI is responsive.  
-* The title of the page should be “Brews: {brewCount}” where brewCount is the number of brews.  
-* Include validation: your brew create and brew edit forms should not allow the form to be submitted if there are blank fields.
-
-### Back-end
-
-* Your front-end should communicate with your back-end via a JSON API, that exposes CRUD endpoints for /api/brews.  
-* Validate that all fields are supplied before saving a record.  
-* Return the correct HTTP status codes as appropriate.
-
-### Documentation and collaboration
-
-* Include a file Documentation.md with setup instructions and a description of the project.  
-* Keep your git history tidy and commit each feature with a descriptive commit message.
-
-### Security hygiene
-
-* Don’t hardcode any secrets. You must read from ENV vars where relevant, and include a .env.example file for easy setup.
-
-### Deployment
-
-* Deploy your app using any hosting service you want, and include the URL in a file “[deployment.md](http://deployment.md)” in your repo. If you aren’t sure which host to use, [render.com](http://render.com) has a free tier you can use.  
-* If you struggle with deployment, add some notes to “[deployment.md](http://deployment.md)” including what you tried to troubleshoot and solve it.
-
-# **Wireframes**
-
-![Wireframe](./wireframe-1.png)
-![Wireframe](./wireframe-2.png)
